@@ -1,0 +1,21 @@
+to activate the virtual environment (venv): .\.venv\Scripts\Activate.ps1  DO THIS FIRST
+
+to train: python -m src.train
+
+to predict with the logreg and input your teams: python -m src.predict_cli
+
+Monte Carlo test w/ NBA API:  python -m src.sim.win_distribution --source nba_api --season 2024 --n_sims 10000
+
+____________________________________________________________________________________
+For the combined predictions
+____________________________________________________________________________________
+
+basic run (interactive): python -m src.predict_combined 
+
+# Use different weighting (80% logistic regression, 20% Monte Carlo)
+python -m src.predict_combined --home LAL --away GSW --date 2024-12-15 --alpha 0.8
+                -you can change the "LAL" "GSW" and the "0.8" for a different weightage
+
+# More simulations for accuracy
+python -m src.predict_combined --home MIA --away PHI --date 2024-11-20 --n_sims 20000
+        - you can replace the "MIA" "PHI" and the "20000" with your own numbers
