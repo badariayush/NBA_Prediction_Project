@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-01-31T19:56:54.873055",
+  "train_metrics": {
+    "accuracy": 0.5,
+    "log_loss": 0.6931471805599453,
+    "roc_auc": 0.5,
+    "n_samples": 12
+  },
+  "val_metrics": {
+    "accuracy": 0.3333333333333333,
+    "log_loss": 0.6931471805599453,
+    "roc_auc": 0.5,
+    "n_samples": 3
+  },
+  "n_features": 4,
+  "feature_columns": [
+    "diff_team_ast_per48",
+    "diff_team_fg_pct",
+    "diff_team_pts_per48",
+    "diff_team_reb_per48"
+  ]
+}

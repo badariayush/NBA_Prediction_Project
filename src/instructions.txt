@@ -19,3 +19,42 @@ python -m src.predict_combined --home LAL --away GSW --date 2024-12-15 --alpha 0
 # More simulations for accuracy
 python -m src.predict_combined --home MIA --away PHI --date 2024-11-20 --n_sims 20000
         - you can replace the "MIA" "PHI" and the "20000" with your own numbers
+\
+
+
+
+____________________________________________________________________________________
+Live Data update: 
+# 1. Pull data (includes 2025-26 current season)
+python -m src.pull_nba_data --seasons 2023-24 2024-25 2025-26
+
+# 2. Build features
+python -m src.features
+
+# 3. Train model
+python -m src.train
+
+# 4. Make predictions (interactive)
+python -m src.predict_cli
+
+# Or run everything with sanity check
+python -m src.sanity_check --full
+
+
+____________________________________________________________________________________________________________
+BIG PLAYRE ROSTER AND MONTE CARLO GBM MODEL UPDATE:
+
+# 1. Pull data (with caching)
+python -m src.pull_nba_data --seasons 2023-24 2024-25 2025-26
+
+# 2. Build features
+python -m src.features
+
+# 3. Train model
+python -m src.train
+
+# 4. Make predictions
+python predict.py --home "Boston Celtics" --away "New York Knicks" --date "2026-01-15"
+
+# With rotation details and more simulations
+python predict.py --home BOS --away NYK --date 2026-01-15 --show-rotation --n-sims 2000
